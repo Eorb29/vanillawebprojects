@@ -1,0 +1,130 @@
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1{
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+}
+
+.img-container{
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  z-index: -10;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  position: relative;
+}
+
+.container.grow{
+  animation: grow 3s linear;
+}
+
+.container.hold{
+  animation: hold 1.5s linear;
+}
+
+.container.shrink{
+  animation: shrink 3s linear;
+}
+
+.text{
+  position: absolute;
+  color: #fff;
+}
+
+.circle{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #010f1c;
+  border-radius: 50%;
+}   
+
+.gradient-circle{
+  height: 320px;
+  width: 320px;
+  background: conic-gradient( #55b7a4 0%, #4ca493 40%, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100% ); /*중심점을 중심으로 회전, 색상 전환 그라데이션으로 구성된 이미지 메이킹*/
+  position: absolute;
+  border-radius: 50%;
+  z-index: -5;
+}
+
+.pointer-container{
+  position: absolute;
+  top: -40;
+  width: 20px;
+  height: 190px;
+  display: flex;
+  justify-content: space-between;
+  animation: rotate 7.5s linear infinite;
+  transform-origin: bottom; /*요소의 원점을 변경*/
+}
+
+.pointer{
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  
+}
+
+
+@keyframes rotate{
+  from{
+      transform: rotate(0);
+  }
+
+  to{
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes grow{
+  from{
+      transform: scale(1);
+  } 
+  to{
+      transform: scale(1.2);
+  }
+}
+
+@keyframes hold {
+  from{
+      transform: scale(1.2);
+  }
+  to{
+      transform: scale(1.2);
+  }
+}
+
+@keyframes shrink{
+  from{
+      transform: scale(1.2);
+  }
+
+  to{
+      transform: scale(1);
+  }
+}
